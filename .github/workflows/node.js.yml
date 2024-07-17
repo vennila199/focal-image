@@ -63,6 +63,6 @@ jobs:
         - name: Output files
           run: ls
         - name: output filename
-          run: echo "${{needs.build.outputs.script-filename}}"
+          run: echo "${{needs.build.outputs.script-file}}"
         - name: deploy
           run: echo "deploying to server"
