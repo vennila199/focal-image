@@ -24,6 +24,11 @@ jobs:
           uses: actions/setup-node@v3
           with: 
               node-version: 18
+        - name: cache dependcies
+          uses: actions/cache@v4
+          with:
+              path: ~/.npm
+              key: deps-node-modules-${{ hashFiles('**/package-lock.json')}}
         - name: install dependencies
           run: npm ci
         - name: Run test
